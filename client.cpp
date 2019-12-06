@@ -42,6 +42,39 @@ void Client::addProduit(Produit* p)
     m_panier.push_back(p);    
 }
 
+void Client::viderPanier()
+{
+    for(Produit* p:m_panier)
+    {
+        delete p;
+    }   
+}
+
+void Client::modifierQuantiteProduit(Produit* p, int quantite)
+{
+    for(Produit* p1:m_panier)
+    {
+        if(p1==p)
+        {
+            p1->setQuantite(quantite);
+        }
+    }
+}
+
+void Client::supprimerProduit(Produit* p)
+{
+    for(int i=0;i<m_panier.size();i++)
+    {
+        
+        if(m_panier.at(i)==p)
+        {
+            m_panier.at(i) = nullptr;
+            delete  m_panier.at(i);
+        }
+    }
+
+}
+
 //Affichage
 void Client::toStringClient()
 {
@@ -52,8 +85,17 @@ void Client::toStringProduitClient()
 {
     toStringClient();
     cout<<"\n";
-    for(Produit* p:m_panier)
+    if(m_panier.empty())
     {
-        cout<<p->getTitre()<<" - "<<p->getPrix()<<" euros";
+        cout<<"Aucun articles dans le panier\n";
     }
+    else
+    {
+        for(Produit* p:m_panier)
+        {
+            p->toString();
+        }
+    }
+    
 }
+
