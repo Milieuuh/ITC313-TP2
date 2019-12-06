@@ -19,7 +19,14 @@ using namespace std;
 class Commande{
 
     public :
-        Commande(Client client, vector<Produit> produit, bool statusCommande=false);
+
+        Commande(Client client, vector<Produit> produit, bool statut=false);
+        int getIdCommande();
+        Client getClient();
+        vector<Produit> getCommande();
+        bool getStatus();
+        void setStatus(bool status);
+        void setCommande(vector<Produit> commande);
 
     private:
         int m_idCommande;
