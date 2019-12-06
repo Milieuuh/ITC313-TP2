@@ -10,7 +10,7 @@
 
 
 //Constructors
-Produit::Produit(string titre, int prix, string description, int quantite)
+Produit::Produit(string titre, double prix, string description, int quantite)
 {
     m_id_produit =1;
     m_titre = titre; 

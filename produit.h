@@ -15,7 +15,7 @@ using namespace std;
 
 class Produit{
   public:
-    Produit(string titre, int prix, string description="", int quantite=1);
+    Produit(string titre, double prix, string description="", int quantite=1);
 
     //GETTER
     int getIdProduit(); 
