@@ -69,5 +69,5 @@ void Produit::setQuantite(int quantite)
 
 void Produit::toString()
 {
-    cout <<"Produit\nId : "<< getIdProduit() <<"\n"<<getTitre()<<"\n"<<getDescription()<<"\nPrix : "<<getPrix()<<"\nQuantité : "<<getQuantite();
+    cout <<"Produit\nId : "<< getIdProduit() <<"\n"<<getTitre()<<"\n"<<getDescription()<<"\nPrix : "<<getPrix()<<" € "<<"\nQuantité : "<<getQuantite();
 }
