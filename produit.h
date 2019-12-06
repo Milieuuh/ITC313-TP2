@@ -16,6 +16,19 @@ using namespace std;
 class Produit{
   public:
     Produit(string titre, int prix, string description="", int quantite=1);
+
+    //GETTER
+    int getIdProduit(); 
+    string getTitre(); 
+    string getDescription(); 
+    double getPrix(); 
+    int getQuantite(); 
+
+    //SETTER
+    void setTitre(string titre); 
+    void setDescription(string description);
+    void setPrix(double prix); 
+    void setQuantite(int quantite); 
   
   private:
     int m_id_produit; 
