@@ -8,4 +8,7 @@
 #include "client.h"
 
 //Constructors
-Client::Client(){}
+Client::Client(string nom, strin prenom){
+    m_nom=nom;
+    m_prenom=prenom;
+}

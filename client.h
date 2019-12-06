@@ -18,7 +18,7 @@ using namespace std;
 class Client{
 
     public :
-        Client();
+        Client(string nom, strin prenom);
 
     private:
         string m_prenom;
