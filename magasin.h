@@ -21,8 +21,10 @@ using namespace std;
 class Magasin{
   public:
     Magasin();
-    void ajoutProduitAuMagasin(Produit p1); 
-    void affichageProduitDuMagasin(); 
+    void ajoutProduitAuMagasin(Produit* p1); 
+    void affichageProduitDuMagasin();
+    void detailProduitDansMagasin(Produit* p1); 
+    void UpdateQuantiteProduitDansMagasin(Produit* p1, int quantite);
   
   private:
     vector<Produit*> m_liste_produits;
