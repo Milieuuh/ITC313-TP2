@@ -19,13 +19,13 @@ using namespace std;
 class Commande{
 
     public :
-        Commande(Client client, vector<Produit> produit, bool statut=false);
+        Commande(Client client, vector<Produit> produit, bool statusCommande=false);
 
     private:
         int m_idCommande;
         Client m_client;
         vector<Produit> m_produits;
         bool m_statutCommande;
-}
+};
 
 #endif // _client_h

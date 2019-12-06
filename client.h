@@ -19,12 +19,13 @@ class Client{
 
     public :
         Client(string nom, string prenom);
+        Client(); 
 
     private:
         int m_idClient;
         string m_prenom;
         string m_nom;
         vector<Produit> m_panier;
-}
+};
 
 #endif // _client_h

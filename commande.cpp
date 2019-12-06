@@ -7,8 +7,9 @@
 
 #include "commande.h"
 
-Commande::Commande(Client client, vector<Produit> produit, bool statut){
+Commande::Commande(Client client, vector<Produit> produit, bool statusCommande)
+{
     m_client=client;
     m_produits=produit;
-    m_statutCommande=statut;
+    m_statutCommande=statusCommande;
 }

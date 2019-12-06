@@ -14,3 +14,5 @@ Client::Client(string nom, string prenom){
     m_nom=nom;
     m_prenom=prenom;
 }
+
+Client::Client() {}
