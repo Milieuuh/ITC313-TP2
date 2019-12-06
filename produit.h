@@ -10,20 +10,18 @@
 
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 
 class Produit{
   public:
-    Produit(); 
-    Produit(string titre, string description, int quantite, int prix);
+    Produit(string titre, int prix, string description="", int quantite=1);
   
   private:
-    string m_titre; 
+    string m_titre;     
+    double m_prix;
     string m_description; 
-    int m_quantite;
-    double m_prix; 
+    int m_quantite; 
 
 };
 
