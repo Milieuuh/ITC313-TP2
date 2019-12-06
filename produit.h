@@ -18,6 +18,7 @@ class Produit{
     Produit(string titre, int prix, string description="", int quantite=1);
   
   private:
+    int m_id_produit; 
     string m_titre;     
     double m_prix;
     string m_description; 
