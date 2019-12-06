@@ -24,11 +24,22 @@ int main() {
     EasyStore.affichageProduitDuMagasin(); 
 
     cout << "\nAVANT " ; 
-    EasyStore.detailProduitDansMagasin(&p1);
-    EasyStore.UpdateQuantiteProduitDansMagasin(&p1, 11); 
+    EasyStore.detailProduitDansMagasin("PS4");
+    EasyStore.UpdateQuantiteProduitDansMagasin("PS4", 11); 
     
     cout << "\nAPRES " ; 
-    EasyStore.detailProduitDansMagasin(&p1); 
+    EasyStore.detailProduitDansMagasin("PS4"); 
+
+
+    EasyStore.ajoutClientAuMagasin(&c1);
+    EasyStore.ajoutClientAuMagasin(&c2);
+    EasyStore.ajoutClientAuMagasin(&c3);
+
+    EasyStore.afficheClientsDuMagasin(); 
+    EasyStore.afficheUnClientDuMagasin(1);
+
+
+
 
     return 0;
 }

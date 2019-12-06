@@ -34,31 +34,84 @@ void Magasin::affichageProduitDuMagasin()
     }
 }
 
-void Magasin::detailProduitDansMagasin(Produit* p1)
+void Magasin::detailProduitDansMagasin(string nom)
 {
     cout <<"\n---------------------------------------------------"<< endl;
     cout << "                   Detail du produit  " << endl; 
     cout <<"---------------------------------------------------"<< endl; 
 
-     if(&p1!=nullptr)
+    for(Produit *p1 : m_liste_produits)
     {
-        cout << p1->getTitre() << "\t" << p1->getDescription() << "\t\t" << p1->getQuantite()<< "\t" << p1->getPrix() << endl;             
+        if(p1->getTitre()==nom)
+        {
+            cout << p1->getTitre() << "\t" << p1->getDescription() << "\t\t" << p1->getQuantite()<< "\t" << p1->getPrix() << endl;             
 
+        }
     }
 
 }
 
 
-void Magasin::UpdateQuantiteProduitDansMagasin(Produit* p1, int quantite)
+void Magasin::UpdateQuantiteProduitDansMagasin(string nom, int quantite)
 {
-    if(&p1!=nullptr)
+    for(Produit *p1 : m_liste_produits)
     {
-        for(Produit* p : m_liste_produits)
+        if(&p1!=nullptr)
         {
-            if(p==p1)
+            if(p1->getTitre()==nom)
             {
-                p->setQuantite(quantite); 
+                p1->setQuantite(quantite); 
             }
+        
         }
     }
+}
+
+void Magasin::ajoutClientAuMagasin(Client* client)
+{
+    m_liste_clients.push_back(client); 
+}
+
+void Magasin::afficheClientsDuMagasin()
+{
+    cout <<"\n---------------------------------------------------"<< endl;
+    cout << "   Les clients du magasin   " << endl; 
+    cout <<"---------------------------------------------------"<< endl; 
+    cout <<"ID \t Prenom et Nom" <<endl; 
+    for(Client *client: m_liste_clients)
+    {
+        if(&client!=nullptr)
+        {
+            cout << client->getIdClient() << "\t" << client->getPrenom() <<" "<< client->getNom() << endl;             
+
+        }
+    }
+}
+
+void Magasin::afficheUnClientDuMagasin(int leClient)
+{
+    cout <<"\n---------------------------------------------------"<< endl;
+    cout << "                   Detail du client  " << endl; 
+    cout <<"---------------------------------------------------"<< endl; 
+
+    for(Client *client : m_liste_clients)
+    {
+        if(client->getIdClient()==leClient)
+        {
+            cout <<client->getIdClient() << "\t" << client->getPrenom() << " " << client->getNom() << endl;             
+
+        }
+    }
+
+}
+
+void Magasin::ajoutProduitDansPanierClient(Client *c, Produit *p)
+{
+    c->addProduit(p); 
+}
+
+
+void Magasin::supprimerProduitDuPanierClient(Produit *p, Client c)
+{
+    
 }
