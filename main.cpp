@@ -39,7 +39,8 @@ int main() {
     EasyStore.afficheUnClientDuMagasin(1);
 
 
-
+    Commande commande(&c1,c1.getPanier());
+    cout<<commande.getClient();
 
     return 0;
 }

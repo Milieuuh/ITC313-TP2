@@ -7,27 +7,27 @@
 
 #include "commande.h"
 
-/*Commande::Commande(Client c1, vector<Produit> produit, bool statut)
+Commande::Commande(Client* c1, vector<Produit*> produit, bool statut)
 {
     m_client=c1;
     m_produits=produit;
     m_statutCommande=statut;
     m_idCommande=1;
-}*/
-Commande::Commande(){}
-/*
+}
+
+
 //GETTER
 int Commande::getIdCommande()
 {
     return m_idCommande;
 }
 
-Client Commande::getClient()
+Client* Commande::getClient()
 {
     return m_client;
 }
 
-vector<Produit> Commande::getCommande()
+/*vector<Produit> Commande::getCommande()
 {
     return m_produits;
 }

@@ -20,20 +20,20 @@ class Commande{
 
     public :
 
-        //Commande(Client c1, vector<Produit> produit, bool statut=false);
-        Commande();
-       /* int getIdCommande();
-        Client getClient();
-        vector<Produit> getCommande();
+        Commande(Client* c1, vector<Produit*> produit, bool statut=false);
+
+        int getIdCommande();
+        Client* getClient();
+       /*  vector<Produit> getCommande();
         bool getStatus();
         void setStatus(bool status);
         void setCommande(vector<Produit> commande);*/
 
     private:
-       /* int m_idCommande;
-       // Client m_client;
-        vector<Produit> m_produits;
-        bool m_statutCommande;*/
+        int m_idCommande;
+        Client* m_client;
+        vector<Produit*> m_produits;
+        bool m_statutCommande;
 };
 
 #endif // _commande_h
