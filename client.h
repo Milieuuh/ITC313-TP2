@@ -18,9 +18,10 @@ using namespace std;
 class Client{
 
     public :
-        Client(string nom, strin prenom);
+        Client(string nom, string prenom);
 
     private:
+        int m_idClient;
         string m_prenom;
         string m_nom;
         vector<Produit> m_panier;
