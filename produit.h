@@ -29,6 +29,8 @@ class Produit{
     void setDescription(string description);
     void setPrix(double prix); 
     void setQuantite(int quantite); 
+
+    void toString();
   
   private:
     int m_id_produit; 
