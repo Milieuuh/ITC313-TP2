@@ -15,11 +15,9 @@ Client::Client(string nom, string prenom){
     m_prenom=prenom;
 }
 
-Client::Client() {}
-
 //GETTER
 int Client::getIdClient()
-{
+{    
     return m_idClient;
 }
 
@@ -33,14 +31,29 @@ string Client::getPrenom()
     return m_prenom;
 }
 
-vector<Produit> Client::getPanier()
+vector<Produit*> Client::getPanier()
 {
     return m_panier;
 }
 
+//SET
+void Client::addProduit(Produit* p)
+{
+    m_panier.push_back(p);    
+}
 
 //Affichage
 void Client::toStringClient()
 {
     cout<<"\n Id : "<<getIdClient()<<" | "<<getNom()<<" "<<getPrenom();
+}
+
+void Client::toStringProduitClient()
+{
+    toStringClient();
+    cout<<"\n";
+    for(Produit* p:m_panier)
+    {
+        cout<<p->getTitre()<<" - "<<p->getPrix()<<" euros";
+    }
 }

@@ -7,14 +7,15 @@
 
 #include "commande.h"
 
-Commande::Commande(Client client, vector<Produit> produit, bool statut)
+/*Commande::Commande(Client c1, vector<Produit> produit, bool statut)
 {
-    m_client=client;
+    m_client=c1;
     m_produits=produit;
     m_statutCommande=statut;
     m_idCommande=1;
-}
-
+}*/
+Commande::Commande(){}
+/*
 //GETTER
 int Commande::getIdCommande()
 {
@@ -45,4 +46,4 @@ void Commande::setStatus(bool status)
 void Commande::setCommande(vector<Produit> commande)
 {
     cout<<"Encours";
-}
+}*/

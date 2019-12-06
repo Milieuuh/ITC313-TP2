@@ -20,20 +20,22 @@ class Client{
 
     public :
         Client(string nom, string prenom);
-        Client(); 
 
         int getIdClient();
         string getNom();
         string getPrenom();
-        vector<Produit> getPanier();
+        vector<Produit*> getPanier();
+
+        void addProduit(Produit* p);
 
         void toStringClient();
+        void toStringProduitClient();
 
     private:
-        int m_idClient;
+        int m_idClient;        
         string m_prenom;
         string m_nom;
-        vector<Produit> m_panier;
+        vector<Produit*> m_panier;       
 };
 
 #endif // _client_h
