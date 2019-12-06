@@ -27,6 +27,9 @@ class Client{
         vector<Produit*> getPanier();
 
         void addProduit(Produit* p);
+        void viderPanier();
+        void modifierQuantiteProduit(Produit* p, int quantite);
+        void supprimerProduit(Produit* p);
 
         void toStringClient();
         void toStringProduitClient();
