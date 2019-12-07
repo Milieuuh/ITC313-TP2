@@ -30,8 +30,9 @@ class Magasin{
     void afficheClientsDuMagasin(); 
     void afficheUnClientDuMagasin(int leClient);
     void ajoutProduitDansPanierClient(Client *c, Produit *p);
-    void supprimerProduitDuPanierClient(Produit *p, Client c); 
-  
+    void supprimerProduitDuPanierClient(Produit *p, Client *c); 
+    void modifierQuantiteProduitClient(Produit *p, int quantite, Client *c);
+
   private:
     vector<Produit*> m_liste_produits;
     vector<Client*> m_liste_clients;
