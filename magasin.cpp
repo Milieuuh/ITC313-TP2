@@ -120,3 +120,21 @@ void Magasin::modifierQuantiteProduitClient(Produit *p, int quantite, Client *c)
 {
     c->modifierQuantiteProduit(p, quantite); 
 }
+
+void Magasin::validerCommande(Commande* commande){
+
+}
+
+void Magasin::miseAJourDuStatusCommande(Commande* commande)
+{
+
+}
+void Magasin::afficheToutesLesCommandes()
+{
+
+}
+
+void afficheToutesLesCommandesAUnClient(Client* client)
+{
+    
+}

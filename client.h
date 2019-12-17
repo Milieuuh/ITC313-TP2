@@ -34,8 +34,8 @@ class Client{
         void toStringClient();
         void toStringProduitClient();
         friend std::ostream& operator << (std::ostream &output, Client c){
-            string s= "\n Id : ";
-            s+=c.getIdClient() ;
+            string s= "\nId : ";
+            s+=c.getIdClient();
             s+=" | ";
             s+= c.getNom();
             s+=" ";
@@ -58,7 +58,7 @@ class Client{
                     s+="\nPrix : ";
                     s+=p->getPrix();
                     s+=" € ";
-                    s+="\nQuantité : ";
+                    s+="\nQuantite : ";
                     s+=p->getQuantite();
                 }
             }
