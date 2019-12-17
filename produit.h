@@ -12,7 +12,7 @@
 #include <string>
 using namespace std;
 
-static int sNextid =0;
+static int sNextid2 =0;
 
 class Produit{
   public:
