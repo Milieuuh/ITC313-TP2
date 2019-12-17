@@ -27,12 +27,12 @@ Client* Commande::getClient()
     return m_client;
 }
 
-/*vector<Produit> Commande::getCommande()
+vector<Produit*> Commande::getCommande()
 {
     return m_produits;
 }
 
-bool Commande::getStatus()
+/*bool Commande::getStatus()
 {
     return m_statutCommande;
 }
