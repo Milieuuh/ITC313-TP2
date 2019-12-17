@@ -113,7 +113,7 @@ void Magasin::ajoutProduitDansPanierClient(Client *c, Produit *p)
 
 void Magasin::supprimerProduitDuPanierClient(Produit *p, Client *c)
 {
-    c->viderPanier(p); 
+    c->supprimerProduit(p); 
 }
 
 void Magasin::modifierQuantiteProduitClient(Produit *p, int quantite, Client *c)
