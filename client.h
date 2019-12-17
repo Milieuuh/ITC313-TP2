@@ -32,7 +32,7 @@ class Client{
         void supprimerProduit(Produit* p);
 
         void toStringClient();
-        //void toStringProduitClient();
+        void toStringProduitClient();
        /*void operator <<(int idClient){
            
         }*/
