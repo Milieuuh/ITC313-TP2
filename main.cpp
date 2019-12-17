@@ -41,6 +41,7 @@ int main() {
 
 
     Commande commande(&c1,c1.getPanier());
+    commande.toStringCommande();
     //cout<<commande.getClient();
 
     return 0;

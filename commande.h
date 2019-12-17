@@ -37,7 +37,7 @@ class Commande{
         bool m_statutCommande;
         Client* m_client;
         vector<Produit*> m_produitsCommande;
-        int m_prixTotal;
+        double m_prixTotal;
        
 };
 

@@ -14,6 +14,19 @@ Commande::Commande(Client* c1, vector<Produit*> produit, bool statut)
     m_statutCommande=statut;
     m_idCommande=++NextIdCommande;
     m_prixTotal=0;
+
+    if(m_produitsCommande.empty())
+    {
+       
+    }
+    else
+    {
+        for(Produit* p: m_produitsCommande)
+        {
+            setPrixTotal(p->getQuantite(),p->getPrix());
+        }
+    }  
+   
 }
 
 
@@ -52,7 +65,7 @@ void Commande::setStatus(bool status)
 
 void Commande::setPrixTotal(int quantite, double prix)
 {
-    m_prixTotal+=m_prixTotal+(quantite*prix);
+    m_prixTotal+=(quantite*prix);
 }
   
 
@@ -77,8 +90,8 @@ void Commande::toStringCommande()
 
     for(Produit* p:m_produitsCommande)
     {
-        cout<<p->getTitre()<<"     "<<p->getQuantite()<<"     "<<p->getQuantite()*p->getPrix()<<" euros\n";
+        cout<<p->getTitre()<<"            "<<p->getQuantite()<<"        "<<p->getQuantite()*p->getPrix()<<" euros\n";
     }
-    cout<<"---------------------------Total : "<<getPrixTotal()<<"\n";
+    cout<<"--------------Total : "<<getPrixTotal()<<" euros \n";
    
 }
