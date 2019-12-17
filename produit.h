@@ -12,10 +12,11 @@
 #include <string>
 using namespace std;
 
+static int sNextid =0;
 
 class Produit{
   public:
-    Produit(string titre, double prix, string description="", int quantite=1);
+    Produit(string titre, double prix, string description="", int quantite);
 
     //GETTER
     int getIdProduit(); 

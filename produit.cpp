@@ -12,7 +12,7 @@
 //Constructors
 Produit::Produit(string titre, double prix, string description, int quantite)
 {
-    m_id_produit =1;
+    m_id_produit =++sNextid;
     m_titre = titre; 
     m_description =description;
     m_quantite = quantite;
