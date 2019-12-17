@@ -33,6 +33,11 @@ class Magasin{
     void supprimerProduitDuPanierClient(Produit *p, Client *c); 
     void modifierQuantiteProduitClient(Produit *p, int quantite, Client *c);
 
+    void validerCommande(Commande* commande);
+    void miseAJourDuStatusCommande(Commande* commande);  
+    void afficheToutesLesCommandes(); 
+    void afficheToutesLesCommandesAUnClient(Client* client); 
+
   private:
     vector<Produit*> m_liste_produits;
     vector<Client*> m_liste_clients;
