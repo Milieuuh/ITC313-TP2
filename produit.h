@@ -16,7 +16,7 @@ static int sNextid =0;
 
 class Produit{
   public:
-    Produit(string titre, double prix, string description="", int quantite);
+    Produit(string titre, double prix, string description="", int quantite=0);
 
     //GETTER
     int getIdProduit(); 
