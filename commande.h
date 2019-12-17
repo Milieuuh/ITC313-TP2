@@ -24,8 +24,8 @@ class Commande{
 
         int getIdCommande();
         Client* getClient();
-       /*  vector<Produit> getCommande();
-        bool getStatus();
+        vector<Produit*> getCommande();
+        /*bool getStatus();
         void setStatus(bool status);
         void setCommande(vector<Produit> commande);*/
 
