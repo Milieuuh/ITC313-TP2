@@ -65,6 +65,7 @@ class Client{
             output << s; 
             return output;
         }
+
     
     private:
         int m_idClient;        
