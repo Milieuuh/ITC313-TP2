@@ -10,9 +10,10 @@
 Commande::Commande(Client* c1, vector<Produit*> produit, bool statut)
 {
     m_client=c1;
-    m_produits=produit;
+    m_produitsCommande=produit;
     m_statutCommande=statut;
-    m_idCommande=1;
+    m_idCommande=++NextIdCommande;
+    m_prixTotal=0;
 }
 
 
@@ -29,12 +30,17 @@ Client* Commande::getClient()
 
 vector<Produit*> Commande::getCommande()
 {
-    return m_produits;
+    return m_produitsCommande;
 }
 
-/*bool Commande::getStatus()
+bool Commande::getStatus()
 {
     return m_statutCommande;
+}
+
+double Commande::getPrixTotal()
+{
+    return m_prixTotal;
 }
 
 //SETTER
@@ -43,7 +49,36 @@ void Commande::setStatus(bool status)
     m_statutCommande=status;
 }
 
-void Commande::setCommande(vector<Produit> commande)
+
+void Commande::setPrixTotal(int quantite, double prix)
 {
-    cout<<"Encours";
-}*/
+    m_prixTotal+=m_prixTotal+(quantite*prix);
+}
+  
+
+void Commande::setCommande(vector<Produit*> produitCommande)
+{  
+    m_produitsCommande.clear();
+
+    for(Produit* p:produitCommande)
+    {
+        m_produitsCommande.push_back(p);
+        setPrixTotal(p->getQuantite(),p->getPrix());
+    }
+
+    cout<<"Commande mise à jour";
+}
+
+void Commande::toStringCommande()
+{  
+    cout<<"Commande "+getIdCommande()<<"     -----     Statut : "<<getStatus()+"\n";
+    m_client->toStringClient();
+    cout<<"Produits : \n-------\n\nNOM          QUANTITE          PRIX\n";
+
+    for(Produit* p:m_produitsCommande)
+    {
+        cout<<p->getTitre()<<"     "<<p->getQuantite()<<"     "<<p->getQuantite()*p->getPrix()<<" euros\n";
+    }
+    cout<<"---------------------------Total : "<<getPrixTotal()<<"\n";
+   
+}

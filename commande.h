@@ -15,25 +15,30 @@
 #include "client.h"
 
 using namespace std;
+static int NextIdCommande=0;
 
 class Commande{
 
     public :
-
         Commande(Client* c1, vector<Produit*> produit, bool statut=false);
 
         int getIdCommande();
         Client* getClient();
         vector<Produit*> getCommande();
-        /*bool getStatus();
+        bool getStatus();
         void setStatus(bool status);
-        void setCommande(vector<Produit> commande);*/
+        void setCommande(vector<Produit*> produitCommande);
+        void toStringCommande();
+        void setPrixTotal(int quantite, double prix);
+        double getPrixTotal();
 
     private:
         int m_idCommande;
-        Client* m_client;
-        vector<Produit*> m_produits;
         bool m_statutCommande;
+        Client* m_client;
+        vector<Produit*> m_produitsCommande;
+        int m_prixTotal;
+       
 };
 
 #endif // _commande_h
