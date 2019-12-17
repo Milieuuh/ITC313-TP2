@@ -61,19 +61,34 @@ void Client::modifierQuantiteProduit(Produit* p, int quantite)
     }
 }
 
+
 void Client::supprimerProduit(Produit* p)
 {
+    vector<Produit*> newListeProduit;
+
     for(int i=0;i<m_panier.size();i++)
     {
         
-        if(m_panier.at(i)==p)
+        if(m_panier.at(i)==p)   
         {
-            m_panier.at(i) = nullptr;
-            delete  m_panier.at(i);
+           cout<<"coucou !!";
         }
+        else
+        {
+             newListeProduit.push_back(m_panier.at(i));
+        }
+        
+    }
+
+    m_panier.clear();
+
+    for(Produit* prod:newListeProduit)
+    {
+        m_panier.push_back(prod);
     }
 
 }
+
 
 //Affichage
 void Client::toStringClient()
