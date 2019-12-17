@@ -81,7 +81,7 @@ void Client::toStringClient()
     cout<<"\n Id : "<<getIdClient()<<" | "<<getNom()<<" "<<getPrenom();
 }
 
-/*void Client::toStringProduitClient()
+void Client::toStringProduitClient()
 {
     toStringClient();
     cout<<"\n";
@@ -97,5 +97,5 @@ void Client::toStringClient()
         }
     }
     
-}*/
+}
 

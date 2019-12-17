@@ -32,10 +32,39 @@ class Client{
         void supprimerProduit(Produit* p);
 
         void toStringClient();
-        //void toStringProduitClient();
-       /*void operator <<(int idClient){
-           
-        }*/
+        void toStringProduitClient();
+        friend std::ostream& operator << (std::ostream &output, Client c){
+            string s= "\n Id : ";
+            s+=c.getIdClient() ;
+            s+=" | ";
+            s+= c.getNom();
+            s+=" ";
+            s+=c.getPrenom(); 
+            s +="\n ";
+            if(c.getPanier().empty())
+            {
+                s+="Aucun articles dans le panier\n";
+            }
+            else
+            {
+                for(Produit* p:c.getPanier())
+                {
+                    s+="Produit\nId : ";
+                    s+=p->getIdProduit();
+                    s+="\n";
+                    s+=p->getTitre();
+                    s+="\n";
+                    s+=p->getDescription();
+                    s+="\nPrix : ";
+                    s+=p->getPrix();
+                    s+=" € ";
+                    s+="\nQuantité : ";
+                    s+=p->getQuantite();
+                }
+            }
+            output << s; 
+            return output;
+        }
     
     private:
         int m_idClient;        
