@@ -7,13 +7,9 @@
 
 #include "commande.h"
 
-Commande::Commande(Client* c1, vector<Produit*> produit, bool statut)
+Commande::Commande(Client* c1, vector<Produit*> produit, bool statut) : m_client(c1), m_produitsCommande(produit), m_statutCommande(statut), m_prixTotal(0)
 {
-    m_client=c1;
-    m_produitsCommande=produit;
-    m_statutCommande=statut;
     m_idCommande=++NextIdCommande;
-    m_prixTotal=0;
 
     if(m_produitsCommande.empty())
     {

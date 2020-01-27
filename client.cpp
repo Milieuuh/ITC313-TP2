@@ -9,10 +9,8 @@
 
 
 //Constructors
-Client::Client(string nom, string prenom){
+Client::Client(string nom, string prenom) : m_nom(nom), m_prenom(prenom) {
     m_idClient=++sNextid;
-    m_nom=nom;
-    m_prenom=prenom;
 }
 
 //GETTER

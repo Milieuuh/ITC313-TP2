@@ -10,13 +10,9 @@
 
 
 //Constructors
-Produit::Produit(string titre, double prix, string description, int quantite)
+Produit::Produit(string titre, double prix, string description, int quantite) : m_titre(titre), m_description(description), m_quantite(quantite), m_prix(prix)
 {
     m_id_produit =++sNextid2;
-    m_titre = titre; 
-    m_description =description;
-    m_quantite = quantite;
-    m_prix = prix; 
 }
 
 //GETTER 
