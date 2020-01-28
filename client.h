@@ -34,13 +34,8 @@ class Client{
         void toStringClient();
         void toStringProduitClient();
         friend std::ostream& operator << (std::ostream &output, Client c){
-            string s= "\nId : ";
-            s+=c.getIdClient();
-            s+=" | ";
-            s+= c.getNom();
-            s+=" ";
-            s+=c.getPrenom(); 
-            s +="\n ";
+            string s= "\nId : " + to_string(c.getIdClient()) + " | "+ c.getNom() +" "+c.getPrenom()+"\n";
+    
             if(c.getPanier().empty())
             {
                 s+="Aucun articles dans le panier\n";
@@ -49,17 +44,8 @@ class Client{
             {
                 for(Produit* p:c.getPanier())
                 {
-                    s+="Produit\nId : ";
-                    s+=p->getIdProduit();
-                    s+="\n";
-                    s+=p->getTitre();
-                    s+="\n";
-                    s+=p->getDescription();
-                    s+="\nPrix : ";
-                    s+=p->getPrix();
-                    s+=" € ";
-                    s+="\nQuantite : ";
-                    s+=p->getQuantite();
+                    s+="Produit\nId : "+ to_string(p->getIdProduit())+ "\n"+ p->getTitre()
+                        +"\n"+ p->getDescription() +"\nPrix : "+ to_string(p->getPrix()) + "euros\nQuantite :"+to_string(p->getQuantite()) +"\n" ;
                 }
             }
             output << s; 
