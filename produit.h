@@ -32,6 +32,14 @@ class Produit{
     void setQuantite(int quantite); 
 
     void toString();
+
+    friend std::ostream& operator << (std::ostream &output, Produit p){
+      string s = "\nInformation du Produit\nId : "+ to_string(p.getIdProduit()) +"\n"+p.getTitre()+"\n"+p.getDescription()+"\nPrix : "+
+                  to_string(p.getPrix())+" euros "+"\nQuantite : "+to_string(p.getQuantite());   
+      output << s; 
+      return output;
+    }
+
   
   private:
     int m_id_produit; 

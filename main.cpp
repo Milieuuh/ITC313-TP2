@@ -35,10 +35,13 @@ int main() {
     c2.addProduit(&p1);
     c3.addProduit(&p3);
 
-    cout<<c1;
-    cout<<c2;
-    cout<<c3;
+    cout<<c1<<endl ;
+    cout<<c2<< endl;
+    cout<<c3 <<endl;
 
+    cout << p1 <<endl; 
+    cout << p2 <<endl; 
+    cout << p3 <<endl; 
 
     Commande commande(&c1,c1.getPanier());
     commande.toStringCommande();
