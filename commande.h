@@ -32,6 +32,24 @@ class Commande{
         void setPrixTotal(int quantite, double prix);
         double getPrixTotal();
 
+        friend std::ostream& operator << (std::ostream &output, Commande c){
+            string s = "\nInformations de la commande\nId : "+ to_string(c.getIdCommande()) +"  ----   Statut : ";
+            if(c.getStatus()==0)
+            {
+                s+="En cours\n";
+            }
+            else
+            {
+                s+="livree\n";
+            }
+
+             s+="Articles commandes :\n";
+
+             
+            output << s; 
+            return output;
+        }
+
     private:
         int m_idCommande;
         bool m_statutCommande;

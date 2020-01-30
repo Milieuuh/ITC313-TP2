@@ -80,7 +80,7 @@ void Commande::setCommande(vector<Produit*> produitCommande)
 
 void Commande::toStringCommande()
 {  
-    cout<<"Commande "+getIdCommande()<<"     -----     Statut : "<<getStatus()+"\n";
+   /* cout<<"Commande "+getIdCommande()<<"     -----     Statut : "<<getStatus()+"\n";
     m_client->toStringClient();
     cout<<"Produits : \n-------\n\nNOM          QUANTITE          PRIX\n";
 
@@ -88,6 +88,7 @@ void Commande::toStringCommande()
     {
         cout<<p->getTitre()<<"            "<<p->getQuantite()<<"        "<<p->getQuantite()*p->getPrix()<<" euros\n";
     }
-    cout<<"--------------Total : "<<getPrixTotal()<<" euros \n";
+    cout<<"--------------Total : "<<getPrixTotal()<<" euros \n";*/
+
    
 }

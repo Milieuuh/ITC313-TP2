@@ -1,3 +1,4 @@
+#define __USE_MINGW_ANSI_STDIO 0
 #include "magasin.h"
 #include "produit.h"
 #include "client.h"
@@ -20,6 +21,7 @@ int main() {
     EasyStore.ajoutProduitAuMagasin(&p1); 
     EasyStore.ajoutProduitAuMagasin(&p2); 
     EasyStore.ajoutProduitAuMagasin(&p3); 
+
     EasyStore.affichageProduitDuMagasin(); 
 
     EasyStore.ajoutClientAuMagasin(&c1);
@@ -27,6 +29,7 @@ int main() {
     EasyStore.ajoutClientAuMagasin(&c3);
 
     EasyStore.afficheClientsDuMagasin(); 
+
     EasyStore.afficheUnClientDuMagasin(1);
 
     //Ajout au panier des clients
@@ -44,8 +47,9 @@ int main() {
     cout << p3 <<endl; 
 
     Commande commande(&c1,c1.getPanier());
-    commande.toStringCommande();
+    //commande.toStringCommande();
     //cout<<commande.getClient();
+   cout<<commande;
 
     return 0;
 }
