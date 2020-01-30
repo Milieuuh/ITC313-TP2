@@ -24,7 +24,7 @@ Menu::Menu(Magasin EasyStore)
         system("cls");
         cout<<"____________________________________________\n             GESTION DU MAGASIN                          \n____________________________________________\n"<<endl;
         cout<<"1. Ajout d'un produit"<<endl;
-        cout<<"2. Supression d'un produit"<<endl;
+        cout<<"2. Mise à jour quantite produit"<<endl;
         cout<<"3. Liste des produits"<<endl;
 
         cin>>nbMag;
@@ -53,9 +53,27 @@ Menu::Menu(Magasin EasyStore)
             
             Menu menu(EasyStore);
         }
+        else if(nbMag==2)
+        {
+            string nomProduit;
+            int quantiteProduit;
+
+            cout<<"Entrez le nom : ";
+            cin>>nomProduit;
+            cout<<"Entrez la quantite : ";
+            cin>>quantiteProduit;
+
+            
+            EasyStore.UpdateQuantiteProduitDansMagasin(nomProduit,quantiteProduit);
+            system("cls");
+            cout<<"Quantite mise a jour. Que desirez-vous faire ensuite ?"<<endl;
+            
+            Menu menu(EasyStore);
+        }
         else if(nbMag==3)
         {
             EasyStore.affichageProduitDuMagasin();
+            Menu menu(EasyStore);
         }
 
     }

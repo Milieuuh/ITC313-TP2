@@ -52,69 +52,8 @@ int main() {
     //cout<<commande.getClient();
    // cout<<commande;
 
-///MENU
-   /* cout<<"____________________________________________\n                   MENU                         \n____________________________________________\n"<<endl;
-
-    cout<<"1. Gestion du magasin"<<endl;
-    cout<<"2. Gestion des commandes"<<endl;
-    cout<<"4. Quitter"<<endl;
-
-    int nb;
-    int nbMag;
-    int nbCom;
-
-    cin>>nb;
-
-    if(nb==1)
-    {
-        system("cls");
-        cout<<"____________________________________________\n             GESTION DU MAGASIN                          \n____________________________________________\n"<<endl;
-        cout<<"1. Ajout d'un produit"<<endl;
-        cout<<"2. Supression d'un produit"<<endl;
-        cout<<"3. Liste des produits"<<endl;
-
-        cin>>nbMag;
-
-        if(nbMag==1)
-        {
-            string nomProduit;
-            double prixProduit;
-            string descriptionProduit;
-            int quantiteProduit;
-
-            cout<<"Entrez le nom : ";
-            cin>>nomProduit;
-            cout<<"Entrez le prix : ";
-            cin>>prixProduit;
-            cout<<"Entrez la description : ";
-            cin>>descriptionProduit;
-            cout<<"Entrez la quantite : ";
-            cin>>quantiteProduit;
-
-            Produit p(nomProduit,prixProduit,descriptionProduit,quantiteProduit);
-            EasyStore.ajoutProduitAuMagasin(&p);
-
-            system("cls");
-            cout<<"Produit ajoute. Que desirez-vous faire ensuite ?"<<endl;
-            main();
-        }
-        else if(nbMag==3)
-        {
-            EasyStore.affichageProduitDuMagasin();
-        }
-
-    }
-    else if(nb==2)
-    {
-        system("cls");
-        cout<<"____________________________________________\n           GESTION DES COMMANDES                         \n____________________________________________\n"<<endl;
-    }
-    else if(nb==4)
-    {
-        exit(0);
-    }
-*/
+    //Menu
     Menu menu(EasyStore);
-    
+
     return 0;
 }
