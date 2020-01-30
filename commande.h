@@ -38,6 +38,7 @@ class Commande{
             if(c.getStatus()==0)
             {
                 s+="En cours\n";
+                
             }
             else
             {
