@@ -34,6 +34,7 @@ class Commande{
 
         friend std::ostream& operator << (std::ostream &output, Commande c){
             string s = "\nInformations de la commande\nId : "+ to_string(c.getIdCommande()) +"  ----   Statut : ";
+        
             if(c.getStatus()==0)
             {
                 s+="En cours\n";
@@ -43,7 +44,21 @@ class Commande{
                 s+="livree\n";
             }
 
-             s+="Articles commandes :\n";
+            s+="Articles commandes :\n     NOM                         QUANTITE          PRIX UNITAIRE          PRIX\n";
+
+            if(c.m_produitsCommande.size()>0)
+            {
+
+                for(Produit* p:c.m_produitsCommande)
+                {
+                    s+="     "+p->getDescription()+"          "+to_string(p->getQuantite())+"              "+to_string(p->getPrix())+"          "+to_string(p->getQuantite()*p->getPrix())+" euros\n";
+                }
+            }
+            else
+            {
+                s+="Aucuns articles dans la commande.\n";
+            }
+            s+="\nTOTAL :"+to_string(c.getPrixTotal())+"\n";
 
              
             output << s; 
