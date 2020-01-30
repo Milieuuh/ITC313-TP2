@@ -32,10 +32,10 @@ class Commande{
         void setPrixTotal(int quantite, double prix);
         double getPrixTotal();
 
-        friend std::ostream& operator << (std::ostream &output, Commande c){
+         friend std::ostream& operator << (std::ostream &output, Commande c){
             string s = "\nInformations de la commande\nId : "+ to_string(c.getIdCommande()) +"  ----   Statut : ";
         
-            if(c.getStatus()==0)
+            if(c.getStatus()==false)
             {
                 s+="En cours\n";
                 
