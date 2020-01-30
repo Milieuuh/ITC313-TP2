@@ -48,6 +48,8 @@ int main() {
     cout << p3 <<endl; */
 
     Commande commande(&c1,c1.getPanier());
+    EasyStore.ajoutCommande(&commande);
+    
     //commande.toStringCommande();
     //cout<<commande.getClient();
    // cout<<commande;

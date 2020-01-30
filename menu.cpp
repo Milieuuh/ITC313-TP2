@@ -81,6 +81,39 @@ Menu::Menu(Magasin EasyStore)
     {
         system("cls");
         cout<<"____________________________________________\n           GESTION DES COMMANDES                         \n____________________________________________\n"<<endl;
+        cout<<"1. Ajout d'une commande"<<endl;
+        cout<<"2. Validation d'une commande"<<endl;
+        cout<<"3. Liste des commandes"<<endl;
+
+        cin>>nbCom;
+
+        if(nbCom==1)
+        {
+            int nbClient;
+            cout<<"Selectionner l'identifiant du client : ";
+            cin>>nbClient;
+
+
+        }
+        else if(nbCom==2)
+        {
+            int nbCommande;
+            cout<<"Selectionner l'identifiant de la commande : ";
+            cin>>nbCommande;
+
+            EasyStore.validerCommande(EasyStore.getCommande(nbCommande));
+            
+            system("cls");
+            cout<<"Commande validee. Que desirez-vous faire ensuite ?"<<endl;
+            
+            Menu menu(EasyStore);
+        }
+        else if(nbCom==3)
+        {
+            EasyStore.afficheToutesLesCommandes();
+            Menu menu(EasyStore);
+        }
+
     }
     else if(nb==4)
     {

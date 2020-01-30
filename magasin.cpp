@@ -131,10 +131,31 @@ void Magasin::miseAJourDuStatusCommande(Commande* commande)
 }
 void Magasin::afficheToutesLesCommandes()
 {
+    for(Commande* c:m_liste_commandes)
+    {
+        c->toStringCommande();
+    }
 
 }
 
 void afficheToutesLesCommandesAUnClient(Client* client)
 {
     
+}
+
+Commande* Magasin::getCommande(int nb)
+{  
+   
+    for(Commande* c: m_liste_commandes)
+    {
+        if(c->getIdCommande()==nb)
+        {
+            return c;
+        }
+    }
+}
+
+void Magasin::ajoutCommande(Commande* commande)
+{
+    m_liste_commandes.push_back(commande);
 }
