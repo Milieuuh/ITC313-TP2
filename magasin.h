@@ -37,10 +37,12 @@ class Magasin{
     void miseAJourDuStatusCommande(Commande* commande);  
     void afficheToutesLesCommandes(); 
     void afficheToutesLesCommandesAUnClient(Client* client); 
+    void ajoutCommande(Commande* commande);
+    
     Commande* getCommande(int nb);
     Client* getClient(int nb);
     Produit* getIdProduit(int id); 
-    void ajoutCommande(Commande* commande);
+
 
   private:
     vector<Produit*> m_liste_produits;

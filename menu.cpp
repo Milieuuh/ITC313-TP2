@@ -77,6 +77,10 @@ Menu::Menu(Magasin EasyStore)
             EasyStore.affichageProduitDuMagasin();
             Menu menu(EasyStore);
         }
+        else
+        {
+            Menu menu(EasyStore);
+        }
 
     }
     else if(nb==2)
@@ -86,6 +90,7 @@ Menu::Menu(Magasin EasyStore)
         cout<<"1. Ajout d'une commande"<<endl;
         cout<<"2. Validation d'une commande"<<endl;
         cout<<"3. Liste des commandes"<<endl;
+        cout<<"4. Afficher toutes les commandes d'un client"<<endl;
 
         cin>>nbCom;
 
@@ -95,9 +100,7 @@ Menu::Menu(Magasin EasyStore)
             cout<<"Selectionner l'identifiant du client : ";
             cin>>nbClient;
 
-            Client* c;
-            c=EasyStore.getClient(nbClient);
-
+            Client* c=EasyStore.getClient(nbClient);
             Commande com(c,c->getPanier());
 
             EasyStore.ajoutCommande(&com);
@@ -125,6 +128,23 @@ Menu::Menu(Magasin EasyStore)
             EasyStore.afficheToutesLesCommandes();
             Menu menu(EasyStore);
         }
+        else if(nbCom==4)
+        {
+            int nbClient;
+            cout<<"Selectionner l'identifiant du client : ";
+            cin>>nbClient;
+
+            Client* c=EasyStore.getClient(nbClient);
+            EasyStore.afficheToutesLesCommandesAUnClient(c);
+
+            Menu menu(EasyStore);
+
+        }
+        else
+        {
+            Menu menu(EasyStore);
+        }
+
 
     }
     else if(nb==3)
@@ -135,20 +155,12 @@ Menu::Menu(Magasin EasyStore)
         cout<<"2. Ajout un produit dans panier client"<<endl;
         cout<<"3. Supprimer un produit dans panier client"<<endl;
         cout<<"4. Liste des clients"<<endl;
-        cout<<"5. Détail d'un client"<<endl;
+        cout<<"5. Detail d'un client"<<endl;
 
         cin>>nbClient;
 
         if (nbClient==1)    // Création d'un client via les données saisies
-        {
-           /* int nbClient;
-            cout<<"Selectionner l'identifiant du client : ";
-            cin>>nbClient;
-
-            Client* c;
-            c=EasyStore.getClient(nbClient);   
-            EasyStore.ajoutClientAuMagasin(c);*/
-           
+        {           
             string nom ; 
             string prenom; 
             cout<<"Entrez le nom : ";

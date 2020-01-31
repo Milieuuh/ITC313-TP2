@@ -121,14 +121,15 @@ void Magasin::modifierQuantiteProduitClient(Produit *p, int quantite, Client *c)
     c->modifierQuantiteProduit(p, quantite); 
 }
 
-void Magasin::validerCommande(Commande* commande){
-    commande->setStatus(true);
+void Magasin::validerCommande(Commande* commande){ ////////---------------------------------> A CHANGER
+    miseAJourDuStatusCommande(commande);
 }
 
 void Magasin::miseAJourDuStatusCommande(Commande* commande)
 {
-
+    commande->setStatus(true);
 }
+
 void Magasin::afficheToutesLesCommandes()
 {
     for(Commande* c:m_liste_commandes)
@@ -138,9 +139,15 @@ void Magasin::afficheToutesLesCommandes()
 
 }
 
-void afficheToutesLesCommandesAUnClient(Client* client)
+void Magasin::afficheToutesLesCommandesAUnClient(Client* client)
 {
-    
+    for(Commande* c:m_liste_commandes)
+    {
+        if(client==c->getClient())
+        {
+            c->toStringCommande();
+        }        
+    }
 }
 
 Commande* Magasin::getCommande(int nb)
