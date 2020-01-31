@@ -57,16 +57,16 @@ Menu::Menu(Magasin EasyStore)
         }
         else if(nbMag==2)
         {
-            string nomProduit;
+            int idProduit;
             int quantiteProduit;
 
-            cout<<"Entrez le nom : ";
-            cin>>nomProduit;
+            cout<<"Entrez l'id du produit : ";
+            cin>>idProduit;
             cout<<"Entrez la quantite : ";
             cin>>quantiteProduit;
 
             
-            EasyStore.UpdateQuantiteProduitDansMagasin(nomProduit,quantiteProduit);
+            EasyStore.UpdateQuantiteProduitDansMagasin(idProduit,quantiteProduit);
             system("cls");
             cout<<"Quantite mise a jour. Que desirez-vous faire ensuite ?"<<endl;
             
@@ -184,10 +184,9 @@ Menu::Menu(Magasin EasyStore)
             cout<<"Selectionner l'identifiant du produit : ";
             cin>>idProduit;
 
-            Produit* p = EasyStore.getIdProduit(idProduit) ; 
+            Produit* p = EasyStore.getIdProduit(idProduit); 
+            Client* c=EasyStore.getClient(nbClient);  
 
-            Client* c;
-            c=EasyStore.getClient(nbClient);   
             EasyStore.ajoutProduitDansPanierClient(c, p) ; 
             Menu menu(EasyStore);
 

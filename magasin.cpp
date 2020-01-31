@@ -89,13 +89,13 @@ void Magasin::detailProduitDansMagasin(string nom)
 }
 
 
-void Magasin::UpdateQuantiteProduitDansMagasin(string nom, int quantite)
+void Magasin::UpdateQuantiteProduitDansMagasin(int id, int quantite)
 {
     for(Produit *p1 : m_liste_produits)
     {
         if(&p1!=nullptr)
         {
-            if(p1->getTitre()==nom)
+            if(p1->getIdProduit()==id)
             {
                 p1->setQuantite(quantite); 
             }

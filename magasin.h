@@ -25,7 +25,7 @@ class Magasin{
     void supprimerProduitAuMagasin(Produit* p1) ;
     void affichageProduitDuMagasin();
     void detailProduitDansMagasin(string nom); 
-    void UpdateQuantiteProduitDansMagasin(string nom, int quantite);
+    void UpdateQuantiteProduitDansMagasin(int id, int quantite);
 
     void ajoutClientAuMagasin(Client* client); 
     void afficheClientsDuMagasin(); 

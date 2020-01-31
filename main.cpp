@@ -23,15 +23,12 @@ int main() {
     EasyStore.ajoutProduitAuMagasin(&p2); 
     EasyStore.ajoutProduitAuMagasin(&p3); 
 
-   // EasyStore.affichageProduitDuMagasin(); 
-
     EasyStore.ajoutClientAuMagasin(&c1);
     EasyStore.ajoutClientAuMagasin(&c2);
     EasyStore.ajoutClientAuMagasin(&c3);
 
     EasyStore.afficheClientsDuMagasin(); 
 
-//EasyStore.afficheUnClientDuMagasin(1);
 
     //Ajout au panier des clients
     c1.addProduit(&p1);
@@ -39,20 +36,19 @@ int main() {
     c2.addProduit(&p1);
     c3.addProduit(&p3);
 
-    /*cout<<c1<<endl ;
+    cout<<c1<<endl ;
     cout<<c2<< endl;
     cout<<c3 <<endl;
 
     cout << p1 <<endl; 
     cout << p2 <<endl; 
-    cout << p3 <<endl; */
+    cout << p3 <<endl; 
 
     Commande commande(&c1,c1.getPanier());
     EasyStore.ajoutCommande(&commande);
     
-    //commande.toStringCommande();
-    //cout<<commande.getClient();
-   // cout<<commande;
+    cout<<commande.getClient();
+    cout<<commande;
 
     //Menu
     Menu menu(EasyStore);
