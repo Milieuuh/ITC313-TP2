@@ -34,7 +34,8 @@ class Client{
 
         void toStringClient();
         void toStringProduitClient();
-        friend std::ostream& operator << (std::ostream &output, Client c){
+
+       friend std::ostream& operator << (std::ostream &output, Client c){
             string s= "\nId : " + to_string(c.getIdClient()) + " | "+ c.getNom() +" "+c.getPrenom()+"\n";
     
             if(c.getPanier().empty())

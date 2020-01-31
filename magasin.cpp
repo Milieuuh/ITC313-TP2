@@ -15,7 +15,14 @@ Magasin::Magasin()
 
 void Magasin::ajoutProduitAuMagasin(Produit* p1)
 {
-    m_liste_produits.push_back(p1); 
+    if(p1 != nullptr)
+    {
+        m_liste_produits.push_back(p1); 
+    }
+    else 
+    {
+        cout << "ERROR : nullptr exeption... " << endl; 
+    }
 }
 
 void Magasin::affichageProduitDuMagasin()
@@ -69,7 +76,14 @@ void Magasin::UpdateQuantiteProduitDansMagasin(string nom, int quantite)
 
 void Magasin::ajoutClientAuMagasin(Client* client)
 {
-    m_liste_clients.push_back(client); 
+    if (client!=nullptr)
+    {
+        m_liste_clients.push_back(client);
+    } 
+    else 
+    {
+        cout << "ERROR : nullptr exeption... " << endl; 
+    }
 }
 
 void Magasin::afficheClientsDuMagasin()
@@ -106,22 +120,95 @@ void Magasin::afficheUnClientDuMagasin(int leClient)
 }
 
 void Magasin::ajoutProduitDansPanierClient(Client *c, Produit *p)
-{
-    c->addProduit(p); 
+{   
+   if (c!=nullptr && p!=nullptr)
+    {
+        for(Produit* prod:m_liste_produits)
+        {
+            if(p==prod)
+            {
+                if(p->getQuantite()>0)
+                {
+                    c->addProduit(p); 
+                    p->setQuantite(p->getQuantite()-1);
+                }  
+                else
+                {
+                    cout << "Victime de son succes..." << endl; 
+                }
+                        
+            }
+        }
+    }
+    else 
+    {
+        cout << "ERROR : nullptr exeption... " << endl; 
+    }
 }
 
 
 void Magasin::supprimerProduitDuPanierClient(Produit *p, Client *c)
 {
-    c->supprimerProduit(p); 
+    if (c!=nullptr && p!=nullptr)
+    {
+        bool res = false; 
+        for(Produit *prod : c->getPanier())
+        {
+            if(p==prod)
+            {
+                c->supprimerProduit(p); 
+                res= true; 
+            }
+        }
+
+        if(res== false)
+        {
+            cout << "Le client n'a pas ce produit dans son panier. " << endl;
+        } 
+        else 
+        {
+            cout << "Produit supprime !" << endl; 
+        }
+    } 
+    else 
+    {
+          cout << "ERROR : nullptr exeption... " << endl; 
+    }
 }
 
 void Magasin::modifierQuantiteProduitClient(Produit *p, int quantite, Client *c)
 {
-    c->modifierQuantiteProduit(p, quantite); 
+    if (c!=nullptr && p!=nullptr)
+    {
+        bool res = false; 
+        for(Produit *prod : c->getPanier())
+        {
+            if(p==prod)
+            {
+                c->modifierQuantiteProduit(p, quantite); 
+                res= true; 
+            }
+        }
+
+        if(res== false)
+        {
+            cout << "Le client n'a pas ce produit dans son panier. " << endl;
+        } 
+        else 
+        {
+            cout << "Quantite modifiee ! " << endl; 
+        }
+    }
+    else 
+    {
+        cout << "ERROR : nullptr exeption... " << endl; 
+    }
+  
 }
 
-void Magasin::validerCommande(Commande* commande){ ////////---------------------------------> A CHANGER
+void Magasin::validerCommande(Commande* commande)
+{ 
+    ////////---------------------------------> A CHANGER
     miseAJourDuStatusCommande(commande);
 }
 
@@ -141,12 +228,19 @@ void Magasin::afficheToutesLesCommandes()
 
 void Magasin::afficheToutesLesCommandesAUnClient(Client* client)
 {
-    for(Commande* c:m_liste_commandes)
+    if (client != nullptr)
     {
-        if(client==c->getClient())
+        for(Commande* c:m_liste_commandes)
         {
-            c->toStringCommande();
-        }        
+            if(client==c->getClient())
+            {
+                c->toStringCommande();
+            }        
+        }
+    }
+    else 
+    {
+        cout << "ERROR : nullptr exeption... " << endl; 
     }
 }
 
@@ -167,6 +261,7 @@ Commande* Magasin::getCommande(int nb)
 Produit* Magasin::getIdProduit(int id)
 {
     Produit* c1;
+    
     for(Produit* c: m_liste_produits)
     {
         if(c->getIdProduit()==id)
@@ -180,7 +275,14 @@ Produit* Magasin::getIdProduit(int id)
 
 void Magasin::ajoutCommande(Commande* commande)
 {
-    m_liste_commandes.push_back(commande);
+     if (commande!=nullptr)
+     {
+        m_liste_commandes.push_back(commande);
+     }
+     else 
+     {
+         cout << "ERROR : nullptr exception !!!!" ; 
+     }
 }
 
 Client* Magasin::getClient(int nb)
