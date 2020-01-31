@@ -38,11 +38,11 @@ Menu::Menu(Magasin EasyStore)
             string descriptionProduit;
             int quantiteProduit;
 
-            cout<<"Entrez le nom : ";
+            cout<<"Entrez le nom (sans espace) : ";
             cin>>nomProduit;
             cout<<"Entrez le prix : ";
             cin>>prixProduit;
-            cout<<"Entrez la description : ";
+            cout<<"Entrez la description (sans espace) : ";
             cin>>descriptionProduit;
             cout<<"Entrez la quantite : ";
             cin>>quantiteProduit;

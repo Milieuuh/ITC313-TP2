@@ -46,6 +46,8 @@ void Client::viderPanier()
     {
         delete p;
     }   
+
+    m_panier.clear(); 
 }
 
 void Client::modifierQuantiteProduit(Produit* p, int quantite)

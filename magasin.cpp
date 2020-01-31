@@ -25,6 +25,36 @@ void Magasin::ajoutProduitAuMagasin(Produit* p1)
     }
 }
 
+void Magasin::supprimerProduitAuMagasin(Produit* p1)
+{
+    if(p1 != nullptr)
+    {
+        vector<Produit*> temp ; 
+        bool res= false; 
+        for(Produit *prod: m_liste_produits)
+        {
+            if(p1!=prod)
+            {
+                temp.push_back(prod); 
+                res= true; 
+            }
+        }
+
+        if(res==false)
+        {
+            cout << "Le magasin n'a pas ce produit. " << endl;
+        } 
+        else 
+        {
+            cout << "Produit supprime du magasin !" << endl; 
+        }
+    }
+    else 
+    {
+        cout << "ERROR : nullptr exeption... " << endl; 
+    }
+}
+
 void Magasin::affichageProduitDuMagasin()
 {
     cout <<"\n---------------------------------------------------"<< endl;
@@ -210,6 +240,25 @@ void Magasin::validerCommande(Commande* commande)
 { 
     ////////---------------------------------> A CHANGER
     miseAJourDuStatusCommande(commande);
+    m_liste_commandes_validee.push_back(commande);
+    vector<Commande*> temp;
+
+    for(Commande* c:m_liste_commandes)
+    {
+        if(c!=commande)
+        {
+            temp.push_back(c);
+        }
+        
+    }
+
+    m_liste_commandes.clear();
+    m_liste_commandes=temp;
+
+    for(Produit* p: commande->getCommande())
+    {
+        //supp
+    }
 }
 
 void Magasin::miseAJourDuStatusCommande(Commande* commande)
@@ -242,6 +291,11 @@ void Magasin::afficheToutesLesCommandesAUnClient(Client* client)
     {
         cout << "ERROR : nullptr exeption... " << endl; 
     }
+}
+
+void Magasin::afficheToutesLesCommandesValidee()
+{
+
 }
 
 Commande* Magasin::getCommande(int nb)

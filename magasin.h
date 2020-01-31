@@ -21,7 +21,8 @@ using namespace std;
 class Magasin{
   public:
     Magasin();
-    void ajoutProduitAuMagasin(Produit* p1); 
+    void ajoutProduitAuMagasin(Produit* p1);
+    void supprimerProduitAuMagasin(Produit* p1) ;
     void affichageProduitDuMagasin();
     void detailProduitDansMagasin(string nom); 
     void UpdateQuantiteProduitDansMagasin(string nom, int quantite);
@@ -37,6 +38,7 @@ class Magasin{
     void miseAJourDuStatusCommande(Commande* commande);  
     void afficheToutesLesCommandes(); 
     void afficheToutesLesCommandesAUnClient(Client* client); 
+    void afficheToutesLesCommandesValidee(); 
     void ajoutCommande(Commande* commande);
     
     Commande* getCommande(int nb);
@@ -48,6 +50,7 @@ class Magasin{
     vector<Produit*> m_liste_produits;
     vector<Client*> m_liste_clients;
     vector<Commande*> m_liste_commandes; 
+    vector<Commande*> m_liste_commandes_validee;
 
 };
 
