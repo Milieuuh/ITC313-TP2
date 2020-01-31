@@ -25,6 +25,11 @@ Commande::Commande(Client* c1, vector<Produit*> produit, bool statut) : m_client
    
 }
 
+Commande::Commande()
+{
+    
+}
+
 
 //GETTER
 int Commande::getIdCommande()
@@ -80,7 +85,18 @@ void Commande::setCommande(vector<Produit*> produitCommande)
 
 void Commande::toStringCommande()
 {  
-    cout<<"Commande "+getIdCommande()<<"     -----     Statut : "<<getStatus()+"\n";
+    cout<<"    Commande "<<getIdCommande()<<"     -----     Statut : ";
+    
+    if(getStatus()==false)
+    {
+        cout<<"En cours"<<endl;
+    }
+    else
+    {
+        cout<<"Validee"<<endl;
+    }
+    
+    
     m_client->toStringClient();
     cout<<"Produits : \n-------\n\nNOM          QUANTITE          PRIX\n";
 

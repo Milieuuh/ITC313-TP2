@@ -29,7 +29,7 @@ int main() {
     EasyStore.ajoutClientAuMagasin(&c2);
     EasyStore.ajoutClientAuMagasin(&c3);
 
-  //  EasyStore.afficheClientsDuMagasin(); 
+    EasyStore.afficheClientsDuMagasin(); 
 
 //EasyStore.afficheUnClientDuMagasin(1);
 
@@ -39,7 +39,7 @@ int main() {
     c2.addProduit(&p1);
     c3.addProduit(&p3);
 
-  /*  cout<<c1<<endl ;
+    /*cout<<c1<<endl ;
     cout<<c2<< endl;
     cout<<c3 <<endl;
 

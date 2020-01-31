@@ -38,6 +38,8 @@ class Magasin{
     void afficheToutesLesCommandes(); 
     void afficheToutesLesCommandesAUnClient(Client* client); 
     Commande* getCommande(int nb);
+    Client* getClient(int nb);
+    Produit* getIdProduit(int id); 
     void ajoutCommande(Commande* commande);
 
   private:

@@ -21,6 +21,7 @@ class Commande{
 
     public :
         Commande(Client* c1, vector<Produit*> produit, bool statut=false);
+        Commande();
 
         int getIdCommande();
         Client* getClient();

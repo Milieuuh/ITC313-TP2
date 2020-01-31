@@ -122,7 +122,7 @@ void Magasin::modifierQuantiteProduitClient(Produit *p, int quantite, Client *c)
 }
 
 void Magasin::validerCommande(Commande* commande){
-
+    commande->setStatus(true);
 }
 
 void Magasin::miseAJourDuStatusCommande(Commande* commande)
@@ -145,17 +145,46 @@ void afficheToutesLesCommandesAUnClient(Client* client)
 
 Commande* Magasin::getCommande(int nb)
 {  
-   
+   Commande* c1;
     for(Commande* c: m_liste_commandes)
     {
         if(c->getIdCommande()==nb)
         {
-            return c;
+            c1=c;
         }
     }
+
+    return c1;
+}
+
+Produit* Magasin::getIdProduit(int id)
+{
+    Produit* c1;
+    for(Produit* c: m_liste_produits)
+    {
+        if(c->getIdProduit()==id)
+        {
+            c1=c;
+        }
+    }
+
+    return c1;
 }
 
 void Magasin::ajoutCommande(Commande* commande)
 {
     m_liste_commandes.push_back(commande);
+}
+
+Client* Magasin::getClient(int nb)
+{
+    Client* c1; 
+    for(Client* c:m_liste_clients)
+    {
+        if(c->getIdClient()==nb)
+        {
+            c1=c;
+        }
+    }
+    return c1; 
 }

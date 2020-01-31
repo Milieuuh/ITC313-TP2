@@ -11,11 +11,13 @@ Menu::Menu(Magasin EasyStore)
 
     cout<<"1. Gestion du magasin"<<endl;
     cout<<"2. Gestion des commandes"<<endl;
+    cout<<"3. Gestion des clients"<<endl;
     cout<<"4. Quitter"<<endl;
 
     int nb;
     int nbMag;
     int nbCom;
+    int nbClient;
 
     cin>>nb;
 
@@ -93,6 +95,16 @@ Menu::Menu(Magasin EasyStore)
             cout<<"Selectionner l'identifiant du client : ";
             cin>>nbClient;
 
+            Client* c;
+            c=EasyStore.getClient(nbClient);
+
+            Commande com(c,c->getPanier());
+
+            EasyStore.ajoutCommande(&com);
+
+            system("cls");
+            cout<<"Commande ajoutee. Que desirez-vous faire ensuite ?"<<endl;            
+            Menu menu(EasyStore);
 
         }
         else if(nbCom==2)
@@ -115,8 +127,103 @@ Menu::Menu(Magasin EasyStore)
         }
 
     }
+    else if(nb==3)
+    {
+        system("cls");
+        cout<<"____________________________________________\n           GESTION DES CLIENTS                         \n____________________________________________\n"<<endl;
+        cout<<"1. Ajout d'un client"<<endl;
+        cout<<"2. Ajout un produit dans panier client"<<endl;
+        cout<<"3. Supprimer un produit dans panier client"<<endl;
+        cout<<"4. Liste des clients"<<endl;
+        cout<<"5. Détail d'un client"<<endl;
+
+        cin>>nbClient;
+
+        if (nbClient==1)    // Création d'un client via les données saisies
+        {
+           /* int nbClient;
+            cout<<"Selectionner l'identifiant du client : ";
+            cin>>nbClient;
+
+            Client* c;
+            c=EasyStore.getClient(nbClient);   
+            EasyStore.ajoutClientAuMagasin(c);*/
+           
+            string nom ; 
+            string prenom; 
+            cout<<"Entrez le nom : ";
+            cin>>nom;
+            cout<<"Entrez le prenom : ";
+            cin>>prenom;
+
+            Client c(nom, prenom);
+            EasyStore.ajoutClientAuMagasin(&c); 
+ 
+            Menu menu(EasyStore);
+
+        }
+        else if(nbClient==2)
+        {
+            int nbClient;
+            cout<<"Selectionner l'identifiant du client : ";
+            cin>>nbClient;
+
+            int idProduit;
+            cout<<"Selectionner l'identifiant du produit : ";
+            cin>>idProduit;
+
+            Produit* p = EasyStore.getIdProduit(idProduit) ; 
+
+            Client* c;
+            c=EasyStore.getClient(nbClient);   
+            EasyStore.ajoutProduitDansPanierClient(c, p) ; 
+            Menu menu(EasyStore);
+
+        }
+        else if(nbClient==3)
+        {
+            int nbClient;
+            cout<<"Selectionner l'identifiant du client : ";
+            cin>>nbClient;
+
+            int idProduit;
+            cout<<"Selectionner l'identifiant du produit : ";
+            cin>>idProduit;
+
+            Produit* p = EasyStore.getIdProduit(idProduit) ; 
+
+            Client* c;
+            c=EasyStore.getClient(nbClient);   
+            EasyStore.supprimerProduitDuPanierClient(p, c); 
+            Menu menu(EasyStore);
+        }
+        else if(nbClient==4)
+        {
+            EasyStore.afficheClientsDuMagasin(); 
+            Menu menu(EasyStore);
+        }
+        else if(nbClient==5)
+        {
+            int nbClient;
+            cout<<"Selectionner l'identifiant du client : ";
+            cin>>nbClient;
+
+            Client* c;
+            c=EasyStore.getClient(nbClient);   
+            EasyStore.afficheUnClientDuMagasin(c->getIdClient());
+
+            Menu menu(EasyStore);
+        }
+
+    }
     else if(nb==4)
     {
         exit(0);
     }
+    else
+    {
+        system("cls");
+        Menu menu(EasyStore);
+    }
+    
 }
